@@ -1,0 +1,629 @@
+html {
+    scroll-behavior: smooth;
+}
+   
+   
+   * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-decoration: none;
+        font-family: "Google sans Regular";
+        box-sizing: border-box;
+    }
+    body {
+        display: flex;
+        flex-direction: column;
+        background: antiquewhite;
+        height: 100%;
+        width: 100%;
+        left: 0;
+
+    }
+    header {
+        position: fixed; /* Fixe le header en haut de l'écran */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 80px;
+        background: #11101b;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 100px; /* Ajoute un espacement interne pour le contenu */
+        z-index: 1000; /* Met le header au-dessus des autres éléments */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optionnel : ajoute une ombre pour le rendre plus visible */
+    }
+    .logo {
+        font-size: 28px;
+        font-weight: bold;
+        color: #fefefe;
+    }
+    .container {
+        display:none;
+    }
+    .nav-bar ul {
+        display: flex;
+    }
+    .nav-bar ul li a {
+        display: block;
+        color: #fefefe;
+        font-size: 20px;
+        padding: 10px 25px;
+        border-radius: 50px;
+        transition: 0.2s;
+        margin: 0 5px;
+    }
+    .nav-bar ul li a:hover {
+        color: #11101b;
+        background: #fefefe;
+    }
+    .nav-bar ul li a.active {
+        color: #11101b;
+        background: #fefefe;
+    }
+    @media only screen and (max-width: 1320px) {
+        header {
+            padding: 0 50px;
+        }
+    }
+    @media only screen and (max-width: 1100px) {
+        header {
+            padding: 0 30px;
+        }
+    }
+
+    @media only screen and (max-width: 1100px) {
+        .container {
+            display: block;
+            cursor: pointer;
+        }
+        .container .line{
+            width: 30px;
+            height: 3px;
+            background: #fefefe;
+            margin: 6px 0;
+        }
+        .nav-bar {
+            height: 0;
+            position:absolute;
+            top: 80px;
+            left: 0;
+            right: 0;
+            width: 100vw;
+            background: #11101b;
+            transition: 0.5s;
+            overflow: hidden;
+        }
+        .nav-bar.active {
+            height: 450px;
+        }
+        .nav-bar ul {
+            display: block;
+            width: fit-content;
+            margin: 80px auto 0 auto;
+            text-align: center;
+            transition: 0.5s;
+            opacity: 0;
+        }
+        .nav-bar.active ul {
+            opacity: 1;
+        }
+        .nav-nar ul li a {
+            margin-bottom: 12px;
+            color: red;
+        }
+    }
+    #presentation {
+      padding-top: 200px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      padding-bottom: 200px;
+    }
+    #presentation #bienvenue {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+      margin-bottom: 20px;
+    }
+    #presentation #intro {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+      margin-bottom: 20px;
+    }
+    
+    #presentation #resume {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: justify;
+      margin-bottom: 20px;
+    }
+    #presentation #telecharger-CV {
+    
+      height: 100%;
+    }
+    #telecharger-CV {
+    text-align: center; /* Centre le contenu */
+    }
+    
+    #telecharger-CV a {
+    display: inline-block; /* Donne à l'élément un comportement de bloc, tout en restant en ligne */
+    padding: 12px 30px; /* Espace interne pour rendre le bouton plus grand */
+    background-color: black; /* Fond noir */
+    color: white; /* Texte blanc */
+    font-size: 18px; /* Taille de la police */
+    font-weight: bold; /* Gras pour le texte */
+    text-decoration: none; /* Enlève le souligné du lien */
+    border-radius: 5px; /* Coins arrondis */
+    transition: background-color 0.3s ease; /* Animation douce au survol */
+    }
+    
+    #telecharger-CV a:hover {
+    background-color: #444; /* Changer la couleur de fond au survol */
+    }
+
+    #aboutme {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 20px 200px;
+        text-align: center;
+    }
+    
+    #aboutmetitle {
+        margin-bottom: 30px;
+        font-size: 2em;
+    }
+    
+    #aboutmecontain {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        max-width: 1200px;
+        width: 100%;
+    }
+    
+    /* Texte */
+    #aboutmetextcontain {
+        flex: 1;
+        min-width: 300px;
+        max-width: 600px;
+        text-align: left;
+    }
+    
+    #aboutmetexth2 {
+        margin-bottom: 20px;
+        font-size: 1.8em;
+    }
+    
+    #aboutmetext {
+        font-size: 18px;
+        text-align: justify;
+        text-justify: inter-word;
+    }
+    
+    /* Contact */
+    #aboutmecontainertelmail {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        font-size: 18px;
+        margin-top: 20px;
+    }
+    
+    #aboutmetextphone,
+    #aboutmetextemail {
+        flex: 1;
+        min-width: 150px;
+        text-align: center;
+    }
+    
+    /* Image */
+    #aboutmeimg {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 300px;
+    }
+    
+    #aboutmeimg img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px; /* Pour un effet plus doux */
+    }
+    
+    /* Responsive */
+    @media screen and (max-width: 1000px) {
+        #aboutmecontain {
+            flex-direction: column;
+            text-align: center;
+            gap: 20px;
+        }
+    
+        #aboutmetextcontain {
+            padding-right: 0;
+            max-width: 90%;
+        }
+    
+        #aboutmecontainertelmail {
+            justify-content: center;
+            gap: 20px;
+        }
+    }
+    
+    @media screen and (max-width: 600px) {
+        #aboutmetitle {
+            font-size: 1.5em;
+        }
+    
+        #aboutmetexth2 {
+            font-size: 1.5em;
+        }
+    
+        #aboutmetext {
+            font-size: 16px;
+        }
+    
+        #aboutmecontainertelmail {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+    
+  
+#formation {
+    padding: 0px 20px 200px;
+}
+
+#formationcontainer {
+    
+    text-align: center;
+}
+
+
+.timeline {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    padding-top: 100px;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background-color: #11101b;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+ 
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: #fefefe;
+    border-radius: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline-content {
+    width: 45%;
+    background: #11101b;
+    padding: 15px;
+    border-radius: 8px;
+    position: relative;
+    color: #fefefe;
+}
+
+.timeline-content p {
+    padding-bottom: 20px;
+}
+
+.timeline-content h2 {
+    padding-bottom: 20px;
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+    margin-left: 55%;
+    text-align: left;   
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    margin-right: 55%;
+    text-align: right;
+}
+
+
+#skills {
+    text-align: center;
+    background: antiquewhite; /* Même couleur que le site */
+    padding-bottom: 200px;
+}
+
+#skills h1 {
+    padding-bottom: 50px;
+}
+
+.skills-title {
+    font-size: 36px;
+    color: #11101b;
+
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.skill-category {
+    background: #11101b;
+    padding: 20px;
+    width: 45%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    color: white;
+}
+
+.skill-category:hover {
+    transform: translateY(-5px);
+}
+
+.skill-category h2 {
+    color: #fefefe;
+    font-size: 22px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #fefefe;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.skill-category p {
+    color: #dcdcdc;
+    font-size: 18px;
+    text-align: justify;
+}
+
+@media screen and (max-width: 768px) {
+    .skill-category {
+        width: 90%;
+    }
+}
+
+#experiences {
+
+    padding: 0px 20px 200px;
+
+}
+
+#experiencescontainer {
+
+    text-align: center;
+
+}
+
+#profilcontainer {
+
+    text-align: center;
+
+}
+
+#profil {
+    text-align: center;
+    padding: 0px 20px 200px;
+    background: antiquewhite;
+}
+
+#profilcontainer h1 {
+    font-size: 36px;
+    color: #11101b;
+    margin-bottom: 40px;
+}
+
+.profil-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.profil-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #11101b;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 15px 40px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: transform 0.3s ease-in-out, background 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.profil-btn img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.profil-btn:hover {
+    transform: translateY(-5px);
+    background: #444;
+}
+
+@media screen and (max-width: 768px) {
+    .profil-links {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+#projects {
+    text-align: center;
+    background: antiquewhite;
+    padding-bottom: 200px;
+}
+
+#projectscontainer h1 {
+    font-size: 36px;
+    color: #11101b;
+    margin-bottom: 40px;
+}
+
+/* Style du carrousel */
+.carousel {
+    position: relative;
+    max-width: 80%;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.project {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 40px;
+    background: #11101b;
+    color: white;
+    text-align: center;
+}
+ 
+.project p a {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    color: #11101b; /* Couleur du texte après hover */
+    background-color: antiquewhite; /* Couleur de fond après hover */
+    padding: 12px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transform: scale(1.05); /* Agrandir légèrement */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Ombre */
+    transition: all 0.3s ease-in-out;
+}
+
+
+.project p a:hover {
+    background-color: #fefefe;
+    color: #11101b;
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.project h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.project p {
+    font-size: 16px;
+    padding-bottom: 20px;
+  
+}
+
+/* Boutons de navigation */
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 20px;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: rgba(255, 255, 255, 1);
+    color:#11101b;
+}
+
+#prevBtn:hover {
+    background: rgba(255, 255, 255, 1);
+    color:#11101b;
+}
+#nextBtn:hover {
+    background: rgba(255, 255, 255, 1);
+    color:#11101b;
+}
+
+#prevBtn, #nextBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10; /* Assurez-vous que les boutons restent au-dessus */
+}
+
+#prevBtn { left: 10px; visibility: visible; }
+#nextBtn { right: 10px; }
+
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+#footer {
+    width: 100%;
+    background: #11101b;
+    color: #fefefe;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+    #footer {
+        font-size: 16px;
+        padding: 15px 0;
+    }
+}
